@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace lite
+namespace mxpmplayer
 {
     /// <summary>
     /// Interaction logic for App.xaml

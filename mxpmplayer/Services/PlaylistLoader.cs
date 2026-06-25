@@ -1,11 +1,11 @@
-﻿using lite.Models;
+﻿using mxpmplayer.Models;
 using System.Drawing;
 using System.IO;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using TagLib; 
 
-namespace lite.Services
+namespace mxpmplayer.Services
 {
     public class PlaylistLoader
     {

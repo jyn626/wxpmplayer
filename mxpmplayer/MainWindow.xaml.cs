@@ -1,5 +1,5 @@
-﻿using lite.Models;
-using lite.Services;
+﻿using mxpmplayer.Models;
+using mxpmplayer.Services;
 using Microsoft.Win32;
 using System.Text;
 using System.Windows;
@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace lite
+namespace mxpmplayer
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
