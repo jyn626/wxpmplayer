@@ -33,18 +33,25 @@ namespace wxpmplayer
             timer.Tick += Timer_Tick;
         }
 
-        private void Timer_Tick(object? sender, EventArgs e)
-        {
-            double currentPosition = _player.Position.TotalSeconds;
-            ProgressSlider.Value = currentPosition;
-        }
-
         private bool _isPaused = false;
         private int _currentIndex = -1;
 
         private List<Song> _songs = new List<Song>();
         private List<Song> _currentPlaylist = new List<Song>();
 
+        private bool isDragging = false;
+
+
+        private void Timer_Tick(object? sender, EventArgs e)
+        {
+            if (isDragging)
+            {
+                return;
+            }
+            double currentPosition = _player.Position.TotalSeconds;
+            ProgressSlider.Value = currentPosition;
+        }
+      
         private void PlaySong(Song song)
         {
             //if (!song)
@@ -238,6 +245,19 @@ namespace wxpmplayer
             _currentIndex = 0;
             TrackComboBox.ItemsSource = _currentPlaylist;
             TrackComboBox.SelectedItem = _currentPlaylist[_currentIndex];
+        }
+
+        private void ProgressSlider_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            isDragging = true;
+
+        }
+
+        private void ProgressSlider_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            isDragging = false;
+            _player.Position = TimeSpan.FromSeconds(ProgressSlider.Value);
+
         }
     }
 }
