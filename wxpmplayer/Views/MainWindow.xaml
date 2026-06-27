@@ -57,7 +57,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock 
-                        Text="CD Player"
+                        Text="Serein"
                         Foreground="White"
                         FontWeight="bold"
                         VerticalAlignment="Center"
@@ -141,13 +141,23 @@
                             Margin="0,0,0,10"/>
                         </Grid>
 
-                        <Slider 
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="CurrentPositionTextBlock" Text="0:00" Margin="0  0 4 0"/>
+                            <Slider 
+                                Grid.Column="1"
                             Margin="0 0 0 10" 
                             Minimum="0" 
                             x:Name="ProgressSlider"
                             PreviewMouseLeftButtonDown="ProgressSlider_PreviewMouseLeftButtonDown"
                             PreviewMouseLeftButtonUp="ProgressSlider_PreviewMouseLeftButtonUp"
                             />
+                            <TextBlock x:Name="DurationTextBlock" Grid.Column="2" Text="0:00" Margin="4 0 0 0"/>
+                        </Grid>
 
                         <!-- Buttons -->
                         <Grid>

@@ -57,14 +57,13 @@ namespace wxpmplayer
 
             double currentPosition = _audioPlayer.GetPlaybackPositionInSeconds();
             ProgressSlider.Value = currentPosition;
-
-            
+            CurrentPositionTextBlock.Text = _audioPlayer.GetPlaybackCurrentPosition().ToString("mm':'ss");
         }
 
         private void Play(Song song)
         {
             _audioPlayer.Play(song);
-
+            DurationTextBlock.Text = song.Duration.ToString("mm':'ss");
         
             ProgressSlider.Maximum = song.Duration.TotalSeconds;
             _timer.Start();

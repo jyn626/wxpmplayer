@@ -61,6 +61,11 @@ namespace wxpmplayer.Services
             return _player.Position.TotalSeconds;
         }
 
+        public TimeSpan GetPlaybackCurrentPosition()
+        {
+            return TimeSpan.FromSeconds(GetPlaybackPositionInSeconds());
+        }
+
         public void SetPlaybackPosition(double value)
         {
             _player.Position = TimeSpan.FromSeconds(value);
