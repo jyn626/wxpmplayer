@@ -13,7 +13,7 @@
         UseLayoutRounding="True"
         Background="Transparent"
         Title="MainWindow" 
-        Height="219" Width="460">
+        Height="221" Width="464">
     <Window.Resources>
         
     </Window.Resources>
@@ -40,7 +40,7 @@
             <!-- Title Bar -->
             <Border 
                 Grid.Row="0"
-                Height="24"
+                Height="26"
                 MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -68,7 +68,7 @@
                         Margin="2"
                         Style="{StaticResource Win98ButtonStyle}"
                         Click="Minimize_Click">
-                        <TextBlock Text="0" FontFamily="Marlett" FontSize="10" FontWeight="bold" Foreground="Black"/>
+                        <fa:IconBlock Icon="WindowMinimize" FontSize="14"/>
                     </Button>
 
                     <!-- Close -->
@@ -77,7 +77,9 @@
                         Margin="2"
                         Style="{StaticResource Win98ButtonStyle}"
                         Click="Close_Click">
-                        <TextBlock Text="r" FontFamily="Marlett" FontSize="10" FontWeight="bold" Foreground="Black"/>
+
+                        <fa:IconBlock Icon="Close" FontSize="14"/>
+
                     </Button>
                 </Grid>
             </Border>
