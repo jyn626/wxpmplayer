@@ -2,7 +2,7 @@
 > in development.
  
  # Serein
-windows xp themed minimalist music player, inspired by old ui aesthetics
+Windows XP themed minimalist music player, inspired by old UI aesthetics.
 
 ## License
 
